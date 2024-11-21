@@ -1,0 +1,36 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Thông Tin Giá Tiêu Thụ{% endblock %}
+
+{% block content %}
+    <h2 class="text-center text-primary">Thông Tin Giá Tiêu Thụ</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Giá tiền điện</h5>
+                    <p class="card-text">{{ gia_dien }} VNĐ/KWh</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Giá tiền nước</h5>
+                    <p class="card-text">{{ gia_nuoc }} VNĐ/m3</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Giá tiền gas</h5>
+                    <p class="card-text">{{ gia_gas }} VNĐ/kg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

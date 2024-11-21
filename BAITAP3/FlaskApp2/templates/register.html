@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Register Page{% endblock %}
+
+{% block content %}
+<h2>Đăng ký</h2>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for m in messages %}
+            <p>{{ m }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container">
+    <form action="{{ url_for('register') }}" method="POST" class="form-container">
+        <!-- Tên người dùng -->
+        <label for="name">Tài khoản</label>
+        <input type="text" name="name" id="name" placeholder="Nhập tên tài khoản" required>
+
+        <!-- Email -->
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Nhập email" required>
+
+        <!-- Số điện thoại -->
+        <label for="phone">Số điện thoại</label>
+        <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" required>
+
+        <!-- Mật khẩu -->
+        <label for="password">Mật khẩu</label>
+        <input type="password" name="password" id="password" placeholder="Nhập mật khẩu" required>
+
+        <!-- Nút đăng ký -->
+        <button type="submit">Đăng ký</button>
+    </form>
+</div>
+
+{% endblock %}

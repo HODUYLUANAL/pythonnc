@@ -1,0 +1,77 @@
+body {
+    background-image: url('/static/images/app3.jpg');
+    
+    background-position: center; /* Căn giữa hình nền */
+    background-repeat: no-repeat; /* Không lặp lại hình nền */
+    font-family: 'Poppins' , sans-serif;
+    background-color: #cabbbbe1;
+    padding: 20px;
+
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffffe5;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: stretch;  /* Các phần tử sẽ kéo dài để có cùng chiều rộng */
+}
+
+.form-container input,
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px; /* Bo góc cho các ô nhập liệu và button */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    
+}
+
+h2{
+    font-size: 30px;
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-bottom: 30px; /* Thêm khoảng cách phía dưới tiêu đề */
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: rgb(245, 240, 240);
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.flash-message {
+    color: red;
+    font-size: 14px;
+}
+
+.navbar {
+    padding: 10px 20px;
+    border-radius: 15px; /* Bo góc cho navbar */
+    display: flex;
+    justify-content: space-between; /* Căn chỉnh nội dung bên trong */
+    align-items: center;
+    color: #fff;
+}
+/* Tùy chỉnh logo */
+.logo {
+    height: 40px; /* Chiều cao logo */
+    width: auto;  /* Chiều rộng tự động để giữ tỷ lệ */
+    display: inline-block; /* Đảm bảo logo được căn thẳng hàng */
+    vertical-align: middle; /* Căn chỉnh logo giữa theo chiều dọc */
+}
+
+.card{
+    text-align: center;
+}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-primary">Cập nhật Thông Tin Tiêu Thụ</h2>
+    
+    <!-- Form nhập liệu -->
+    <form method="POST" action="{{ url_for('update_consumption') }}">
+        <!-- Điện tiêu thụ -->
+        <div class="form-group row">
+            <label for="dien" class="col-sm-4 col-form-label">Điện tiêu thụ (kWh):</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="dien" name="dien" placeholder="Nhập số kWh tiêu thụ" required>
+            </div>
+        </div>
+        
+        <!-- Nước tiêu thụ -->
+        <div class="form-group row">
+            <label for="nuoc" class="col-sm-4 col-form-label">Nước tiêu thụ (m³):</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="nuoc" name="nuoc" placeholder="Nhập số m³ tiêu thụ" required>
+            </div>
+        </div>
+        
+        <!-- Khí Gas tiêu thụ -->
+        <div class="form-group row">
+            <label for="gas" class="col-sm-4 col-form-label">Khí Gas tiêu thụ (m³):</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="gas" name="gas" placeholder="Nhập số m³ tiêu thụ" required>
+            </div>
+        </div>
+        
+        <!-- Khí Gas tiêu thụ -->
+        <div class="form-group row">
+            <label for="date" class="col-sm-4 col-form-label">Ngày nhập (DD/MM/YYYY):</label>
+            <div class="col-sm-8">
+                <input type="date" class="form-control" id="date" name="date" placeholder="Nhập ngày" required>
+            </div>
+        </div>
+        
+        <!-- Nút Lưu thông tin -->
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-block" style="max-width: 300px; margin: auto;">Cập nhật</button>
+        </div>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="alert-container">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+<script>
+    // Tự động ẩn thông báo sau 5 giây
+    setTimeout(function() {
+        let alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            alert.style.transition = 'opacity 0.5s ease';
+            alert.style.opacity = '0';
+            setTimeout(function() {
+                alert.remove();
+            }, 500); // Xóa sau khi hiệu ứng mờ dần kết thúc
+        });
+    }, 5000); // Thời gian hiển thị thông báo là 5 giây
+</script>
